@@ -1,0 +1,35 @@
+<h1>Listing experiments</h1>
+
+<table>
+  <tr>
+    <th>Userid</th>
+    <th>Title</th>
+    <th>Startdate</th>
+    <th>Stopdate</th>
+    <th>Experimenttype</th>
+    <th>Details</th>
+    <th>Createddate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @experiments.each do |experiment| %>
+  <tr>
+    <td><%= experiment.userid %></td>
+    <td><%= experiment.title %></td>
+    <td><%= experiment.startdate %></td>
+    <td><%= experiment.stopdate %></td>
+    <td><%= experiment.experimenttype %></td>
+    <td><%= experiment.details %></td>
+    <td><%= experiment.createddate %></td>
+    <td><%= link_to 'Show', experiment %></td>
+    <td><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
+    <td><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Experiment', new_experiment_path %>

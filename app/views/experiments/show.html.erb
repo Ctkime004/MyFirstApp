@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Userid:</b>
+  <%= @experiment.userid %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @experiment.title %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @experiment.startdate %>
+</p>
+
+<p>
+  <b>Stopdate:</b>
+  <%= @experiment.stopdate %>
+</p>
+
+<p>
+  <b>Experimenttype:</b>
+  <%= @experiment.experimenttype %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @experiment.details %>
+</p>
+
+<p>
+  <b>Createddate:</b>
+  <%= @experiment.createddate %>
+</p>
+
+
+<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+<%= link_to 'Back', experiments_path %>

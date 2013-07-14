@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  userid: MyString
+  title: MyText
+  startdate: 2013-07-13
+  stopdate: 2013-07-13
+  experimenttype: MyString
+  details: MyText
+  createddate: 2013-07-13 20:51:12
+
+two:
+  userid: MyString
+  title: MyText
+  startdate: 2013-07-13
+  stopdate: 2013-07-13
+  experimenttype: MyString
+  details: MyText
+  createddate: 2013-07-13 20:51:12
