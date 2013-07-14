@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="brand" href="#">MyFirstApp</a>
+				<ul class="nav pull-right">
+					<li><%= link_to 'New Experiment', new_experiment_path %></li>
+					<li><%= link_to 'Experiments', experiments_path %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<%= yield %>
+	</div>
+	<footer>
+		<div class="container-fluid">
+			<p>Built by <a href="https://twitter.com/coreykime">@CoreyKime</a></p>
+		</div>
+	</footer>
 
 </body>
 </html>

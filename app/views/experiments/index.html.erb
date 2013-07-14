@@ -1,35 +1,46 @@
-<h1>Listing experiments</h1>
-
-<table>
-  <tr>
-    <th>Userid</th>
-    <th>Title</th>
-    <th>Startdate</th>
-    <th>Stopdate</th>
-    <th>Experimenttype</th>
-    <th>Details</th>
-    <th>Createddate</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @experiments.each do |experiment| %>
-  <tr>
-    <td><%= experiment.userid %></td>
-    <td><%= experiment.title %></td>
-    <td><%= experiment.startdate %></td>
-    <td><%= experiment.stopdate %></td>
-    <td><%= experiment.experimenttype %></td>
-    <td><%= experiment.details %></td>
-    <td><%= experiment.createddate %></td>
-    <td><%= link_to 'Show', experiment %></td>
-    <td><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
-    <td><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Experiment', new_experiment_path %>
+<div class="row-fluid">
+    <div class="span12 page-header">
+        <h1>My Experiments<span class="pull-right"><%= button_to 'Create a New Experiment (Might be filter options later for experiments)', new_experiment_path, :method => "get", :class => "btn btn-info" %></span></h1>
+    </div>
+</div>
+<div id="details-section" >
+    <div class="row-fluid hidden-phone">
+        <div id="list-headers" class="span12">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav row-fluid">
+                        <li class="span5 text-center">Experiment Name</li>
+                        <li class="span2 text-center">Type</li>
+                        <li class="span3 text-center">Run Time</li>
+                        <li class="span2 text-center">Options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid visible-phone">
+        <div id="list-headers" class="span12">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav row-fluid">
+                        <li class="span12 text-center">Experiment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    
+    <% @experiments.each do |experiment| %>
+        <div class="row-fluid">
+            <div class="span12 well well-large">
+                <div class="row-fluid">
+                    <p class="span5"><%= link_to experiment.title, experiment %></p>
+                    <p class="span2 text-center"><%= experiment.experimenttype %></p>
+                    <p class="span3 text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
+                    <p class="span1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
+                    <p class="span1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                </div>
+            </div>
+        </div>  
+    <% end %>
+</div>
