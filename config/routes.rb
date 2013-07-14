@@ -1,5 +1,8 @@
 Myfirstapp::Application.routes.draw do
+  devise_for :users
+
   resources :experiments
+  root to: 'experiments#index'
 
 
   # The priority is based upon order of creation:
