@@ -28,6 +28,7 @@
         <%= f.input :details, wrapper_html: {class: 'text-center'}, input_html: { class: 'text-center' }, required: false %>
       </div>
     </div>
+    <%= f.input :createddate, as: :string %>
     <%= f.button :submit %>
     <script type="text/javascript">
       $('[data-behaviour~=datepicker]').datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
