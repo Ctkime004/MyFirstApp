@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714234440) do
+ActiveRecord::Schema.define(:version => 20130718005250) do
 
   create_table "experiments", :force => true do |t|
     t.text     "title"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20130714234440) do
     t.date     "stopdate"
     t.string   "experimenttype"
     t.text     "details"
-    t.datetime "createddate"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
