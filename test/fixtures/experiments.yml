@@ -6,6 +6,7 @@ one:
   stopdate: 2013-07-13
   experimenttype: MyString
   details: MyText
+  user: corey
 
 two:
   title: MyText
@@ -13,3 +14,4 @@ two:
   stopdate: 2013-07-13
   experimenttype: MyString
   details: MyText
+  user: corey

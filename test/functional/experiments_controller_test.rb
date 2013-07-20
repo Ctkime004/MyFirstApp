@@ -11,14 +11,21 @@ class ExperimentsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:experiments)
   end
 
-  test "should get new" do
+  test "should be redirected when not logged in" do
+    get :new
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should render the new page when logged in" do
+    sign_in users(:corey)
     get :new
     assert_response :success
   end
 
   test "should create experiment" do
     assert_difference('Experiment.count') do
-      post :create, experiment: { createddate: @experiment.createddate, details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title, userid: @experiment.userid }
+      post :create, experiment: { details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title }
     end
 
     assert_redirected_to experiment_path(assigns(:experiment))
@@ -35,7 +42,7 @@ class ExperimentsControllerTest < ActionController::TestCase
   end
 
   test "should update experiment" do
-    put :update, id: @experiment, experiment: { createddate: @experiment.createddate, details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title, userid: @experiment.userid }
+    put :update, id: @experiment, experiment: { details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title }
     assert_redirected_to experiment_path(assigns(:experiment))
   end
 
