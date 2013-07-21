@@ -23,7 +23,15 @@ class ExperimentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create experiment" do
+  test "should be logged in to post an experiment" do
+    post :create, experiment: {details: "testing1234", experimenttype: "ad copy", startdate: "2013-07-13", stopdate: "2013-07-13", title: "title one"}
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should create experiment when logged in" do
+    sign_in users(:corey)
+
     assert_difference('Experiment.count') do
       post :create, experiment: { details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title }
     end
@@ -36,12 +44,26 @@ class ExperimentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should be logged in to edit an experiment" do
+    get :edit, id: @experiment
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should get edit when logged in" do
+    sign_in users(:corey)
     get :edit, id: @experiment
     assert_response :success
   end
 
+  test "should redirect update experiment when not logged in" do
+    put :update, id: @experiment, experiment: { details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title }
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
   test "should update experiment" do
+    sign_in users (:corey)
     put :update, id: @experiment, experiment: { details: @experiment.details, experimenttype: @experiment.experimenttype, startdate: @experiment.startdate, stopdate: @experiment.stopdate, title: @experiment.title }
     assert_redirected_to experiment_path(assigns(:experiment))
   end

@@ -1,5 +1,5 @@
 class ExperimentsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
   # GET /experiments
   # GET /experiments.json
   def index
