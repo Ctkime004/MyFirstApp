@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Impressions:</b>
+  <%= @ppc_ad_copy.Impressions %>
+</p>
+
+<p>
+  <b>Clicks:</b>
+  <%= @ppc_ad_copy.Clicks %>
+</p>
+
+<p>
+  <b>Conversions:</b>
+  <%= @ppc_ad_copy.Conversions %>
+</p>
+
+<p>
+  <b>Cpc:</b>
+  <%= @ppc_ad_copy.CPC %>
+</p>
+
+
+<%= link_to 'Edit', edit_ppc_ad_copy_path(@ppc_ad_copy) %> |
+<%= link_to 'Back', ppc_ad_copies_path %>

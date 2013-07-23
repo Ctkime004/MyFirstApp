@@ -1,0 +1,14 @@
+<%= simple_form_for(@ppc_ad_copy) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :Impressions %>
+    <%= f.input :Clicks %>
+    <%= f.input :Conversions %>
+    <%= f.input :CPC %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

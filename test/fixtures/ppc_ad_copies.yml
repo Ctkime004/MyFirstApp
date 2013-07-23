@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Impressions: 1
+  Clicks: 1
+  Conversions: 1
+  CPC: 9.99
+
+two:
+  Impressions: 1
+  Clicks: 1
+  Conversions: 1
+  CPC: 9.99

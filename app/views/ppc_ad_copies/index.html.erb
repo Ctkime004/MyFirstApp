@@ -1,0 +1,29 @@
+<h1>Listing ppc_ad_copies</h1>
+
+<table>
+  <tr>
+    <th>Impressions</th>
+    <th>Clicks</th>
+    <th>Conversions</th>
+    <th>Cpc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ppc_ad_copies.each do |ppc_ad_copy| %>
+  <tr>
+    <td><%= ppc_ad_copy.Impressions %></td>
+    <td><%= ppc_ad_copy.Clicks %></td>
+    <td><%= ppc_ad_copy.Conversions %></td>
+    <td><%= ppc_ad_copy.CPC %></td>
+    <td><%= link_to 'Show', ppc_ad_copy %></td>
+    <td><%= link_to 'Edit', edit_ppc_ad_copy_path(ppc_ad_copy) %></td>
+    <td><%= link_to 'Destroy', ppc_ad_copy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ppc ad copy', new_ppc_ad_copy_path %>

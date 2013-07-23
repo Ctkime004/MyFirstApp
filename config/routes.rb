@@ -1,4 +1,7 @@
 Myfirstapp::Application.routes.draw do
+  resources :ppc_ad_copies
+
+
   devise_for :users
 
   resources :experiments
