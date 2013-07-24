@@ -1,10 +1,12 @@
 Myfirstapp::Application.routes.draw do
-  resources :ppc_ad_copies
-
+  
 
   devise_for :users
 
-  resources :experiments
+  resources :experiments do
+    resources :ppc_ad_copies
+  end
+
   root to: 'experiments#index'
 
 
