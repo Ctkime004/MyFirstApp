@@ -6,12 +6,19 @@ class ExperimentsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    sign_in users(:corey)
     get :index
     assert_response :success
     assert_not_nil assigns(:experiments)
   end
 
-  test "should be redirected when not logged in" do
+  test "should be logged in to view index page" do
+    get :index
+    assert_response :redirect
+    assert_redirected_to new_user_session_path    
+  end
+
+  test "should be redirected when not logged in for new experiment" do
     get :new
     assert_response :redirect
     assert_redirected_to new_user_session_path
@@ -39,7 +46,14 @@ class ExperimentsControllerTest < ActionController::TestCase
     assert_redirected_to experiment_path(assigns(:experiment))
   end
 
+  test "should redirect to login page when enter show path and not logged in" do
+    get :show, id: @experiment
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
   test "should show experiment" do
+    sign_in users(:corey)
     get :show, id: @experiment
     assert_response :success
   end
@@ -69,6 +83,7 @@ class ExperimentsControllerTest < ActionController::TestCase
   end
 
   test "should destroy experiment" do
+    sign_in users (:corey)
     assert_difference('Experiment.count', -1) do
       delete :destroy, id: @experiment
     end
