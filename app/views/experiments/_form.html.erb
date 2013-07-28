@@ -11,25 +11,23 @@
     </div>
   <% end %>
 
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12 page-header">
-        <%= f.input :title, placeholder: 'Title', as: :string, label: false %>
-      </div>
+  <div class="row-fluid">
+    <div class="span12 page-header">
+      <%= f.input :title, placeholder: 'Title', as: :string, label: false %>
     </div>
-    <div class="row-fluid">
-        <%= f.input :startdate, as: :string, :input_html => { data: {behaviour: "datepicker"}}, wrapper_html: { class: 'span4 text-center'}, label: 'Start Date' %>
-        <%= f.input :stopdate, as: :string, :input_html => { data: {behaviour: "datepicker"}}, wrapper_html: { class: 'span4 text-center'}, label: 'Stop Date' %>
-        <%= f.input :experimenttype, wrapper_html: { class: 'span4 text-center'}, input_html: { class: 'text-center' }, label: 'Experiment Type' %>
-    </div>
-    <div class="row-fluid">
-      <div class="span12">
-        <%= f.input :details, wrapper_html: {class: 'text-center'}, input_html: { class: 'text-center' }, required: false %>
-      </div>
-    </div>
-    <%= f.button :submit %>
-    <script type="text/javascript">
-      $('[data-behaviour~=datepicker]').datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
-    </script>
   </div>
+  <div class="row-fluid">
+      <%= f.input :startdate, as: :string, :input_html => { data: {behaviour: "datepicker"}}, wrapper_html: { class: 'span4 text-center'}, label: 'Start Date' %>
+      <%= f.input :stopdate, as: :string, :input_html => { data: {behaviour: "datepicker"}}, wrapper_html: { class: 'span4 text-center'}, label: 'Stop Date' %>
+      <%= f.input :experimenttype, wrapper_html: { class: 'span4 text-center'}, input_html: { class: 'text-center' }, label: 'Experiment Type' %>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.input :details, wrapper_html: {class: 'text-center'}, input_html: { class: 'text-center' }, required: false %>
+    </div>
+  </div>
+  <%= f.button :submit %>
+  <script type="text/javascript">
+    $('[data-behaviour~=datepicker]').datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
+  </script>
 <% end %>

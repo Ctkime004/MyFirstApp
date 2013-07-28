@@ -1,36 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Creator:</b>
-  <%= @experiment.user.full_name %>
-</p>
+<div class="row-fluid">
+  <div class="span12 page-header">
+    <h1 style="display: inline;"><%= @experiment.title %></h1>
+    <span class="pull-right"><%= button_to 'Edit', edit_experiment_path(@experiment), :method => "get", class: "btn btn-primary" %></span>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span4">
+    <h2 class="text-center">Start Date</h2>
+    <div class="text-center">
+      <p><%= @experiment.startdate %></p>
+    </div>
+  </div>
+  <div class="span4">
+    <h2 class="text-center">Stop Date</h2>
+    <div class="text-center">
+      <p><%= @experiment.stopdate %></p>
+    </div>
+  </div>
+  <div class="span4">
+    <h2 class="text-center">Experiment Type</h2>
+    <div class="text-center">
+      <p><%= @experiment.experimenttype %></p>
+    </div>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <h2 class="text-center">Experiment Details</h2>
+    <p class="text-center"><%= @experiment.details %></p>
+  </div>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @experiment.title %>
-</p>
-
-<p>
-  <b>Startdate:</b>
-  <%= @experiment.startdate %>
-</p>
-
-<p>
-  <b>Stopdate:</b>
-  <%= @experiment.stopdate %>
-</p>
-
-<p>
-  <b>Experimenttype:</b>
-  <%= @experiment.experimenttype %>
-</p>
-
-<p>
-  <b>Details:</b>
-  <%= @experiment.details %>
-  <%= @experiment.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
-<%= link_to 'Back', experiments_path %>
