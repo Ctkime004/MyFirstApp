@@ -17,8 +17,7 @@
     <td><%= ppc_ad_copy.Clicks %></td>
     <td><%= ppc_ad_copy.Conversions %></td>
     <td><%= ppc_ad_copy.CPC %></td>
-    <td><%= link_to 'Show', ppc_ad_copy %></td>
-    <td><%= link_to 'Edit', edit_ppc_ad_copy_path(ppc_ad_copy) %></td>
+    <td><%= link_to 'Edit', edit_experiment_ppc_ad_copy_path(ppc_ad_copy) %></td>
     <td><%= link_to 'Destroy', ppc_ad_copy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -26,4 +25,4 @@
 
 <br />
 
-<%= link_to 'New PPC Ad Copy', new_ppc_ad_copy_path %>
+
