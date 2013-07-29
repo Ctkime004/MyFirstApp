@@ -1,4 +1,4 @@
-<%= simple_form_for(@ppc_ad_copy) do |f| %>
+<%= simple_form_for([@experiment, @ppc_ad_copy]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -6,6 +6,11 @@
     <%= f.input :Clicks %>
     <%= f.input :Conversions %>
     <%= f.input :CPC %>
+    <%= f.input :title %>
+    <%= f.input :line_1 %>
+    <%= f.input :line_2 %>
+    <%= f.input :display_url %>
+    <%= f.input :landing_page_url %>
   </div>
 
   <div class="form-actions">

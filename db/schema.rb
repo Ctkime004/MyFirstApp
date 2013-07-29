@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723015711) do
+ActiveRecord::Schema.define(:version => 20130729010526) do
 
   create_table "experiments", :force => true do |t|
     t.text     "title"
@@ -31,9 +31,17 @@ ActiveRecord::Schema.define(:version => 20130723015711) do
     t.integer  "Clicks"
     t.integer  "Conversions"
     t.decimal  "CPC"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "experiment_id"
+    t.string   "title"
+    t.string   "line_1"
+    t.string   "line_2"
+    t.string   "display_url"
+    t.string   "landing_page_url"
   end
+
+  add_index "ppc_ad_copies", ["experiment_id"], :name => "index_ppc_ad_copies_on_experiment_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
