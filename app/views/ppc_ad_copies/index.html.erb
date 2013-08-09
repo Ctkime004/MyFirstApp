@@ -1,28 +1,58 @@
-<h1>Listing ppc_ad_copies</h1>
-
-<table>
-  <tr>
-    <th>Impressions</th>
-    <th>Clicks</th>
-    <th>Conversions</th>
-    <th>Cpc</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Ad Copy Options</h1>
 
 <% @ppc_ad_copies.each do |ppc_ad_copy| %>
-  <tr>
-    <td><%= ppc_ad_copy.Impressions %></td>
-    <td><%= ppc_ad_copy.Clicks %></td>
-    <td><%= ppc_ad_copy.Conversions %></td>
-    <td><%= ppc_ad_copy.CPC %></td>
-    <td><%= link_to 'Edit', edit_experiment_ppc_ad_copy_path(ppc_ad_copy) %></td>
-    <td><%= link_to 'Destroy', ppc_ad_copy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="row-fluid">
+  <div class="span12 well">
+    <div class="row-fluid">
+      <div class="span3">
+        <h4 class="text-center">Ad Copy</h4>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="span9">
+        <div class="row-fluid text-center">
+          <div class="span3">
+            <h4>Impressions</h4>
+            <p><%= ppc_ad_copy.Impressions %></p>
+          </div>
+          <div class="span3">
+            <h4>Clicks</h4>
+            <p><%= ppc_ad_copy.Clicks %></p>
+          </div>
+          <div class="span3">
+            <h4>Conversions</h4>
+            <p><%= ppc_ad_copy.Conversions %></p>
+          </div>
+          <div class="span3">
+            <h4>Cost Per Click</h4>
+            <p><%= ppc_ad_copy.CPC %></p>
+          </div>
+        </div>
+        <div class="row-fluid text-center">
+          <div class="span3">
+            <h4>Click %</h4>
+            <p></p>
+          </div>
+          <div class="span3">
+            <h4>Conversion %</h4>
+            <p></p>
+          </div>
+          <div class="span3">
+            <h4>Total Cost</h4>
+            <p></p>
+          </div>
+          <div class="span3">
+            <h4>Cost Per Conversion</h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_experiment_ppc_ad_copy_path(@experiment, ppc_ad_copy) %>
+    <%= link_to 'Destroy', [@experiment, ppc_ad_copy], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
 <% end %>
-</table>
-
-<br />
-
 
