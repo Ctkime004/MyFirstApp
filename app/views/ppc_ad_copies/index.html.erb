@@ -1,4 +1,9 @@
-<h1>Ad Copy Options</h1>
+<div class="row-fluid">
+  <div class="span12 page-header">
+    <h1 style="display: inline;">Ad Copy Options</h1>
+    <span class="pull-right"><%= button_to 'Back to Experiment', experiment_path(@experiment), :method => "get", class: "btn btn-primary" %></span>
+  </div>
+</div>
 
 <% @ppc_ad_copies.each do |ppc_ad_copy| %>
 <div class="row-fluid">
