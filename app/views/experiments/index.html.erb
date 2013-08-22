@@ -1,29 +1,29 @@
-<div class="row-fluid">
-    <div class="span12 page-header">
+<div class="row">
+    <div class="col-md-12 page-header">
         <h1>My Experiments</h1>
     </div>
 </div>
 <div id="details-section" >
-    <div class="row-fluid hidden-phone">
-        <div id="list-headers" class="span12">
-            <div class="navbar">
+    <div class="row hidden-xs">
+        <div id="list-headers" class="col-md-12">
+            <div class="navbar navbar-default">
                 <div class="navbar-inner">
-                    <ul class="nav row-fluid">
-                        <li class="span5 text-center">Experiment Name</li>
-                        <li class="span2 text-center">Type</li>
-                        <li class="span3 text-center">Run Time</li>
-                        <li class="span2 text-center">Options</li>
+                    <ul class="nav row">
+                        <li class="col-md-5 text-center">Experiment Name</li>
+                        <li class="col-md-2 text-center">Type</li>
+                        <li class="col-md-3 text-center">Run Time</li>
+                        <li class="col-md-2 text-center">Options</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row-fluid visible-phone">
-        <div id="list-headers" class="span12">
+    <div class="row visible-xs">
+        <div id="list-headers" class="col-md-12">
             <div class="navbar">
                 <div class="navbar-inner">
                     <ul class="nav row-fluid">
-                        <li class="span12 text-center">Experiment</li>
+                        <li class="col-md-12 text-center">Experiment</li>
                     </ul>
                 </div>
             </div>
@@ -31,14 +31,14 @@
     </div>
                     
     <% @experiments.each do |experiment| %>
-        <div class="row-fluid">
-            <div class="span12 well well-large">
-                <div class="row-fluid">
-                    <p class="span5"><%= link_to experiment.title, experiment %></p>
-                    <p class="span2 text-center"><%= experiment.experimenttype %></p>
-                    <p class="span3 text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
-                    <p class="span1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
-                    <p class="span1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <div class="row">
+            <div class="col-md-12 well well-large">
+                <div class="row">
+                    <p class="col-md-5"><%= link_to experiment.title, experiment %></p>
+                    <p class="col-md-2 text-center"><%= experiment.experimenttype %></p>
+                    <p class="col-md-3 text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
+                    <p class="col-md-1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
+                    <p class="col-md-1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 </div>
             </div>
         </div>  

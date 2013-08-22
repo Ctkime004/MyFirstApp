@@ -7,11 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="brand" href="#">MyFirstApp</a>
-				<ul class="nav pull-right">
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">MyFirstApp</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
 					<% if user_signed_in? %>
 						<li><%= link_to 'New Experiment', new_experiment_path %></li>
 						<li><%= link_to 'Experiments', experiments_path %></li>
@@ -29,7 +36,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="container">
 		<% flash.each do |type, message| %>
 			<div class="alert <%= flash_class type %>">
 				<button class="close" data-dismiss="alert">x</button>

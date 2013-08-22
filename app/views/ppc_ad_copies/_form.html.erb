@@ -2,18 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :Impressions %>
-    <%= f.input :Clicks %>
-    <%= f.input :Conversions %>
-    <%= f.input :CPC %>
-    <%= f.input :title %>
-    <%= f.input :line_1 %>
-    <%= f.input :line_2 %>
-    <%= f.input :display_url %>
-    <%= f.input :landing_page_url %>
+    <%= f.input :Impressions, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :Clicks, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :Conversions, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :CPC, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :title, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :line_1, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :line_2, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :display_url, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :landing_page_url, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn btn-success' %>
   </div>
 <% end %>
