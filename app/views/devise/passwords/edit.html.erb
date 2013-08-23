@@ -2,13 +2,13 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
-  <%= f.input :reset_password_token, as: :hidden %>
+  <%= f.input :reset_password_token, as: :hidden, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
 
-  <%= f.input :password %>
+  <%= f.input :password, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
 
-  <%= f.input :password_confirmation %>
+  <%= f.input :password_confirmation, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
 
-  <%= f.button :submit, "Change my password" %>
+  <%= f.button :submit, "Change my password", :class => 'btn btn-default' %>
 <% end %>
 
 <%= render "devise/shared/links" %>

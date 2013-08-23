@@ -4,26 +4,15 @@
     </div>
 </div>
 <div id="details-section" >
-    <div class="row hidden-xs">
+    <div class="row">
         <div id="list-headers" class="col-md-12">
             <div class="navbar navbar-default">
                 <div class="navbar-inner">
                     <ul class="nav row">
-                        <li class="col-md-5 text-center">Experiment Name</li>
-                        <li class="col-md-2 text-center">Type</li>
-                        <li class="col-md-3 text-center">Run Time</li>
-                        <li class="col-md-2 text-center">Options</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row visible-xs">
-        <div id="list-headers" class="col-md-12">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <ul class="nav row-fluid">
-                        <li class="col-md-12 text-center">Experiment</li>
+                        <li class="col-md-5 col-xs-12 col-sm-12 text-center">Experiment</li>
+                        <li class="col-md-2 hidden-xs hidden-sm text-center">Type</li>
+                        <li class="col-md-3 hidden-xs hidden-sm text-center">Run Time</li>
+                        <li class="col-md-2 hidden-xs hidden-sm text-center">Options</li>
                     </ul>
                 </div>
             </div>
@@ -34,9 +23,9 @@
         <div class="row">
             <div class="col-md-12 well well-large">
                 <div class="row">
-                    <p class="col-md-5"><%= link_to experiment.title, experiment %></p>
-                    <p class="col-md-2 text-center"><%= experiment.experimenttype %></p>
-                    <p class="col-md-3 text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
+                    <p class="col-md-5 text-center"><%= link_to experiment.title, experiment %></p>
+                    <p class="col-md-2 hidden-xs hidden-sm text-center"><%= experiment.experimenttype %></p>
+                    <p class="col-md-3 hidden-xs hidden-sm text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
                     <p class="col-md-1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
                     <p class="col-md-1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 </div>
