@@ -26,6 +26,7 @@ class ExperimentsController < ApplicationController
   # GET /experiments/new.json
   def new
     @experiment = Experiment.new
+    @types = Type.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,8 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1/edit
   def edit
     @experiment = Experiment.find(params[:id])
+
+    @types = Type.all
   end
 
   # POST /experiments
@@ -43,6 +46,7 @@ class ExperimentsController < ApplicationController
   def create
     @experiment = Experiment.new(params[:experiment])
     @experiment.user = current_user
+    @types = Type.all
 
     respond_to do |format|
       if @experiment.save
@@ -52,6 +56,7 @@ class ExperimentsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @experiment.errors, status: :unprocessable_entity }
       end
+
     end
   end
 
@@ -69,6 +74,7 @@ class ExperimentsController < ApplicationController
         format.json { render json: @experiment.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /experiments/1
