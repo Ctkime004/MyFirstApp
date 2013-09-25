@@ -24,7 +24,7 @@
             <div class="col-md-12 well well-large">
                 <div class="row">
                     <p class="col-md-5 text-center"><%= link_to experiment.title, experiment %></p>
-                    <p class="col-md-2 hidden-xs hidden-sm text-center"><%= experiment.experimenttype %></p>
+                    <p class="col-md-2 hidden-xs hidden-sm text-center"><%= experiment.type.name %></p>
                     <p class="col-md-3 hidden-xs hidden-sm text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
                     <p class="col-md-1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
                     <p class="col-md-1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
