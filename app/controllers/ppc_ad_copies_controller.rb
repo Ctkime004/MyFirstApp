@@ -1,5 +1,6 @@
 class PpcAdCopiesController < ApplicationController
   before_filter :load_experiment
+  before_filter :authenticate_user!
   # GET /ppc_ad_copies
   # GET /ppc_ad_copies.json
   def index
