@@ -41,16 +41,5 @@
   </div>
 <% end %>
 <% if @experiment.experimenttype == "1" %>
-  <div class="well">
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-center"><%= link_to 'View Ad Copies', experiment_ppc_ad_copies_path(@experiment) %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="text-center"><%= button_to 'New Ad Copy', new_experiment_ppc_ad_copy_path(@experiment), :method => "get", class: "btn btn-success" %></div>
-      </div>
-    </div>
-  </div>
+  <%= render template: "ppc_ad_copies/index" %>
 <% end %>

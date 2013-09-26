@@ -3,33 +3,30 @@
         <h1>My Experiments</h1>
     </div>
 </div>
-<div id="details-section" >
-    <div class="row">
-        <div id="list-headers" class="col-md-12">
-            <div class="navbar navbar-default">
-                <div class="navbar-inner">
-                    <ul class="nav row">
-                        <li class="col-md-5 col-xs-12 col-sm-12 text-center">Experiment</li>
-                        <li class="col-md-2 hidden-xs hidden-sm text-center">Type</li>
-                        <li class="col-md-3 hidden-xs hidden-sm text-center">Run Time</li>
-                        <li class="col-md-2 hidden-xs hidden-sm text-center">Options</li>
-                    </ul>
-                </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="navbar navbar-default">
+            <div class="navbar-inner">
+                <ul class="nav row">
+                    <li class="col-md-5 col-xs-12 col-sm-12 text-center">Experiment</li>
+                    <li class="col-md-2 hidden-xs hidden-sm text-center">Type</li>
+                    <li class="col-md-3 hidden-xs hidden-sm text-center">Run Time</li>
+                    <li class="col-md-2 hidden-xs hidden-sm text-center">Options</li>
+                </ul>
             </div>
         </div>
     </div>
-                    
-    <% @experiments.each do |experiment| %>
-        <div class="row">
-            <div class="col-md-12 well well-large">
-                <div class="row">
-                    <p class="col-md-5 text-center"><%= link_to experiment.title, experiment %></p>
-                    <p class="col-md-2 hidden-xs hidden-sm text-center"><%= experiment.type.name %></p>
-                    <p class="col-md-3 hidden-xs hidden-sm text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
-                    <p class="col-md-1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
-                    <p class="col-md-1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-                </div>
+</div>                    
+<% @experiments.each do |experiment| %>
+    <div class="row">
+        <div class="col-md-12 well well-large">
+            <div class="row">
+                <p class="col-md-5 text-center"><%= link_to experiment.title, experiment %></p>
+                <p class="col-md-2 hidden-xs hidden-sm text-center"><%= experiment.type.name %></p>
+                <p class="col-md-3 hidden-xs hidden-sm text-center"><%= experiment.startdate %> to <%= experiment.stopdate %></p>
+                <p class="col-md-1 text-center"><%= link_to 'Edit', edit_experiment_path(experiment) %></p>
+                <p class="col-md-1 text-center"><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
             </div>
-        </div>  
-    <% end %>
-</div>
+        </div>
+    </div>  
+<% end %>
