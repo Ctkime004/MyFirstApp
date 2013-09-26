@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130920025645) do
+ActiveRecord::Schema.define(:version => 20130926013843) do
 
   create_table "experiments", :force => true do |t|
     t.text     "title"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130920025645) do
     t.decimal  "conversion_percentage"
     t.decimal  "total_cost"
     t.decimal  "cost_per_conversion"
+    t.string   "option_title"
   end
 
   add_index "ppc_ad_copies", ["experiment_id"], :name => "index_ppc_ad_copies_on_experiment_id"

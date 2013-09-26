@@ -1,5 +1,5 @@
 class PpcAdCopy < ActiveRecord::Base
-  attr_accessible :CPC, :Clicks, :Conversions, :Impressions, :title, :line_1, :line_2, :display_url, :landing_page_url
+  attr_accessible :CPC, :Clicks, :Conversions, :Impressions, :title, :line_1, :line_2, :display_url, :landing_page_url, :option_title
   belongs_to :experiment
   
   before_save :calculate_percentages
