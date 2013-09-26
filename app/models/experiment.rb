@@ -8,4 +8,5 @@ class Experiment < ActiveRecord::Base
   					length: {minimum: 2}
   validates :user_id, presence: true
   validates :experimenttype, presence: true
+  attr_readonly :experimenttype
 end

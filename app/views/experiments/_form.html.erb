@@ -19,7 +19,12 @@
   <div class="row">
       <%= f.input :startdate, as: :string, :input_html => { data: {behaviour: "datepicker"}, class: 'form-control'}, wrapper_html: { class: 'col-md-4 text-center form-group'}, label: 'Start Date' %>
       <%= f.input :stopdate, as: :string, :input_html => { data: {behaviour: "datepicker"}, class: 'form-control'}, wrapper_html: { class: 'col-md-4 text-center form-group'}, label: 'Stop Date' %>
+      <% if @experiment.new_record? %>
       <%= f.input :experimenttype, collection: @types, wrapper_html: { class: 'col-md-4 text-center form-group'}, input_html: { class: 'text-center form-control' }, label: 'Experiment Type' %>
+      <% end %>
+      <% if @experiment.persisted? %>
+      <%= f.input :experimenttype, :disabled => true, collection: @types, wrapper_html: { class: 'col-md-4 text-center form-group'}, input_html: { class: 'text-center form-control' }, label: 'Experiment Type' %>
+      <% end %>
   </div>
   <div class="row">
       <%= f.input :details, wrapper_html: {class: 'col-md-12 text-center form-group'}, input_html: { class: 'text-center form-control', :rows => 5 }, required: false %>
