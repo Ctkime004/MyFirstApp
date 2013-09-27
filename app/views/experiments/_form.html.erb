@@ -29,6 +29,7 @@
   <div class="row">
       <%= f.input :details, wrapper_html: {class: 'col-md-12 text-center form-group'}, input_html: { class: 'text-center form-control', :rows => 5 }, required: false %>
   </div>
+    <%= f.input :active, label: false, inline_label: 'Active', wrapper_html: {class: 'form-group checkbox'} %>
   <%= f.button :submit, :class => 'btn btn-success' %>
   <script type="text/javascript">
     $('[data-behaviour~=datepicker]').datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
