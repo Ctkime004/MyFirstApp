@@ -1,21 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "well"}) do |f| %>
-        <%= devise_error_messages! %>
-          <fieldset>
-            <legend>Sign Up</legend>
-            <%= f.input :first_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-            <%= f.input :last_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-            <%= f.input :user_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-            <%= f.input :email, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-            <%= f.input :password, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-            <%= f.input :password_confirmation, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-            <%= f.button :submit, "Sign up", :class => 'btn btn-default' %>
-          </fieldset>
-      <% end %>
+<%= devise_error_messages! %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "well"}) do |f| %>
+        <fieldset>
+          <legend>Sign Up</legend>
+          <%= f.input :first_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :last_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :user_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :email, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :password, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :password_confirmation, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.button :submit, "Sign up", :class => 'btn btn-default' %>
+        </fieldset>
+    <% end %>
 
-  <%= render "devise/shared/links" %>
-    </div>
+<%= render "devise/shared/links" %>
   </div>
 </div>
