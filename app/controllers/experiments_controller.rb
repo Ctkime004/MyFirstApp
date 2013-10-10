@@ -27,6 +27,7 @@ class ExperimentsController < ApplicationController
   def new
     @experiment = Experiment.new
     @types = Type.all
+    @statuses = Statuses.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,6 +40,7 @@ class ExperimentsController < ApplicationController
     @experiment = Experiment.find(params[:id])
 
     @types = Type.all
+    @statuses = Statuses.all
   end
 
   # POST /experiments
@@ -47,6 +49,7 @@ class ExperimentsController < ApplicationController
     @experiment = Experiment.new(params[:experiment])
     @experiment.user = current_user
     @types = Type.all
+    @statuses = Statuses.all
 
     respond_to do |format|
       if @experiment.save

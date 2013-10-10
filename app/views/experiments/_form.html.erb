@@ -15,8 +15,8 @@
     <div class="col-md-10 form-group">
       <%= f.input :title, placeholder: 'Title', as: :string, label: false, input_html: { class: 'form-control' } %>
     </div>
-    <div class="col-md-2">
-      <%= f.input :active, label: false, inline_label: 'Active', wrapper_html: {class: 'form-group'} %>
+    <div class="col-md-2 form-group">
+      <%= f.input :status, :prompt => "Status", :label => false, collection: @statuses, input_html: { class: 'form-control' } %>
     </div>
   </div>
   <div class="row">

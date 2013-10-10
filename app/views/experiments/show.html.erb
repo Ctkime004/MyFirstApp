@@ -2,11 +2,14 @@
 <div class="row">
   <div class="col-md-12 page-header">
     <h1 style="display: inline;"><%= @experiment.title %>
-      <% if @experiment.active == true %>
-        <small>Active</small>
+      <% if @experiment.status == "1" %>
+        <small>Planning</small>
       <% end %>
-      <% if @experiment.active == false %>
-        <small>Inactive</small>
+      <% if @experiment.status == "2" %>
+        <small>In Progress</small>
+      <% end %>
+      <% if @experiment.status == "3" %>
+        <small>Completed</small>
       <% end %>
     </h1>
     <span class="pull-right"><%= button_to 'Edit Experiment', edit_experiment_path(@experiment), :method => "get", class: "btn btn-primary" %></span>
