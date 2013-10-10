@@ -1,7 +1,14 @@
 
 <div class="row">
   <div class="col-md-12 page-header">
-    <h1 style="display: inline;"><%= @experiment.title %></h1>
+    <h1 style="display: inline;"><%= @experiment.title %>
+      <% if @experiment.active == true %>
+        <small>Active</small>
+      <% end %>
+      <% if @experiment.active == false %>
+        <small>Inactive</small>
+      <% end %>
+    </h1>
     <span class="pull-right"><%= button_to 'Edit Experiment', edit_experiment_path(@experiment), :method => "get", class: "btn btn-primary" %></span>
   </div>
 </div>
