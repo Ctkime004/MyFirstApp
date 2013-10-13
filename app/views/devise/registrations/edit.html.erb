@@ -1,37 +1,37 @@
-<div class="container">
-  <div class="page-header">
-    <h1>My Profile</h1>
-  </div>
+<div class="page-header">
+  <h1>My Profile</h1>
+</div>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: "well" }) do |f| %>
   <%= devise_error_messages! %>
-    <div class="login-info">
-      <h2>Login Information</h2>
-      <%= f.input :email, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <%= f.input :password, hint: 'leave blank if you do not want to change it', wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-
-      <%= f.input :password_confirmation, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-
-      <%= f.input :current_password, hint: 'we need your current password to confirm your changes', wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+    <div class="row">
+      <div class="login-info col-md-5"> 
+        <fieldset>
+          <legend>Login Information</legend>
+          <%= f.input :email, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+          <%= f.input :password, hint: 'leave blank if you do not want to change it', wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :password_confirmation, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :current_password, hint: 'we need your current password to confirm your changes', wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+        </fieldset>
+      </div>
+      <div class="personal-info col-md-5 col-md-offset-2">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <%= f.input :first_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :last_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+          <%= f.input :user_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+        </fieldset>
+      </div>
     </div>
-    <div class="personal-info">
-      <h2>Personal Information</h2>
-      <%= f.input :first_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-      <%= f.input :last_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
-      <%= f.input :user_name, wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } %>
+    <div class="row text-center">
+      <%= f.button :submit, "Update", :class => 'btn btn-info' %>
     </div>
-
-    <%= f.button :submit, "Update", :class => 'btn btn-default' %>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger' %></p>
+<h3>Not Happy?</h3>
+<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger' %>
 
 <%= link_to "Back", :back %>
-</div>
