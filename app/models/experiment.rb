@@ -5,11 +5,22 @@ class Experiment < ActiveRecord::Base
   belongs_to :statuses, :foreign_key => "status"
   has_many :ppc_ad_copies, :dependent => :destroy
 
-  validates :title, presence: true,
-  					length: {minimum: 2}
+  validates :title, presence: true
   validates :user_id, presence: true
+  validates :status, presence: true
   validates :experimenttype, presence: true
-  validates :startdate, presence: true if :active == true
+  validates :startdate, presence: true, if: :status_is_in_progress_or_completed
+
+  def status_is_in_progress_or_completed
+    status == "2" or "3"
+  end
+
+  validates :stopdate, presence: true, if: :status_is_completed
+
+  def status_is_completed
+    status == "3"
+  end
+
   attr_readonly :experimenttype
 
   validate :validate_stop_date_after_start_date
