@@ -1,10 +1,13 @@
 Myfirstapp::Application.routes.draw do
   
 
+
+
   devise_for :users
 
   resources :experiments do
     resources :ppc_ad_copies
+    resources :emails
   end
 
   root to: 'experiments#index'

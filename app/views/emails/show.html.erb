@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sends:</b>
+  <%= @email.sends %>
+</p>
+
+<p>
+  <b>Delivered:</b>
+  <%= @email.delivered %>
+</p>
+
+<p>
+  <b>Opens:</b>
+  <%= @email.opens %>
+</p>
+
+<p>
+  <b>Clicks:</b>
+  <%= @email.clicks %>
+</p>
+
+<p>
+  <b>Conversions:</b>
+  <%= @email.conversions %>
+</p>
+
+<p>
+  <b>Delivery percentage:</b>
+  <%= @email.delivery_percentage %>
+</p>
+
+<p>
+  <b>Open percentage:</b>
+  <%= @email.open_percentage %>
+</p>
+
+<p>
+  <b>Click percentage:</b>
+  <%= @email.click_percentage %>
+</p>
+
+<p>
+  <b>Open to click percentage:</b>
+  <%= @email.open_to_click_percentage %>
+</p>
+
+<p>
+  <b>Conversion percentage:</b>
+  <%= @email.conversion_percentage %>
+</p>
+
+
+<%= link_to 'Edit', edit_experiment_email_path(@email) %> |
+<%= link_to 'Back', experiment_emails_path %>

@@ -1,0 +1,16 @@
+<%= simple_form_for([@experiment, @email]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :option_title, placeholder: 'Option Name', label: false, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :sends, placeholder: 'Number of Emails Sent', label: false, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :delivered, placeholder: 'Number of Emails Delivered', label: false, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :opens, placeholder: 'Number of Email Opens', label: false, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :clicks, placeholder: 'Number of Email Clicks', label: false, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= f.input :conversions, placeholder: 'Number of Conversions from Email', label: false, wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-success' %>
+  </div>
+<% end %>

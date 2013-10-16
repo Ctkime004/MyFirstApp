@@ -4,6 +4,7 @@ class Experiment < ActiveRecord::Base
   belongs_to :type, :foreign_key => "experimenttype"
   belongs_to :statuses, :foreign_key => "status"
   has_many :ppc_ad_copies, :dependent => :destroy
+  has_many :emails, :dependent => :destroy
 
   validates :title, presence: true
   validates :user_id, presence: true

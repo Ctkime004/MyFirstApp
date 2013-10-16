@@ -53,3 +53,6 @@
 <% if @experiment.experimenttype == "1" %>
   <%= render template: "ppc_ad_copies/index" %>
 <% end %>
+<% if @experiment.experimenttype == "3" %>
+  <%= render template: "emails/index" %>
+<% end %>

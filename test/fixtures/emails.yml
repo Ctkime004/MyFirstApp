@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sends: 1
+  delivered: 1
+  opens: 1
+  clicks: 1
+  conversions: 1
+  delivery_percentage: 9.99
+  open_percentage: 9.99
+  click_percentage: 9.99
+  open_to_click_percentage: 9.99
+  conversion_percentage: 9.99
+
+two:
+  sends: 1
+  delivered: 1
+  opens: 1
+  clicks: 1
+  conversions: 1
+  delivery_percentage: 9.99
+  open_percentage: 9.99
+  click_percentage: 9.99
+  open_to_click_percentage: 9.99
+  conversion_percentage: 9.99

@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010033321) do
+ActiveRecord::Schema.define(:version => 20131016041321) do
+
+  create_table "emails", :force => true do |t|
+    t.integer  "sends"
+    t.integer  "delivered"
+    t.integer  "opens"
+    t.integer  "clicks"
+    t.integer  "conversions"
+    t.decimal  "delivery_percentage"
+    t.decimal  "open_percentage"
+    t.decimal  "click_percentage"
+    t.decimal  "open_to_click_percentage"
+    t.decimal  "conversion_percentage"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.integer  "experiment_id"
+    t.string   "option_title"
+  end
 
   create_table "experiments", :force => true do |t|
     t.text     "title"

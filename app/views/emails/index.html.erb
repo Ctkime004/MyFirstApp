@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Email Options</h1>
+  </div>
+</div>
+
+<% @experiment.emails.each do |email| %>
+  <div class="row">
+    <div class="col-md-12 well">
+        <div class="row">
+            <div class="col-md-12">
+                <h3><%= email.option_title %></h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-2 col-md-offset-1">
+                <h4>Emails Sent</h4>
+                <p><%= email.sends %></p>
+            </div>
+            <div class="col-md-2">
+                <h4>Emails Delivered</h4>
+                <p><%= email.delivered %></p>
+            </div>
+            <div class="col-md-2">
+                <h4>Email Opens</h4>
+                <p><%= email.opens %></p>
+            </div>
+            <div class="col-md-2">
+                <h4>Email Clicks</h4>
+                <p><%= email.clicks %></p>
+            </div><div class="col-md-2">
+                <h4>Conversions</h4>
+                <p><%= email.conversions %></p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-2 col-md-offset-1">
+                <h4>Delivery %</h4>
+                <p><%= number_to_percentage(number_with_precision(email.delivery_percentage), precision: 2) %></p>
+            </div>
+            <div class="col-md-2">
+                <h4>Open %</h4>
+                <p><%= number_to_percentage(number_with_precision(email.open_percentage), precision: 2) %></p>
+            </div>
+            <div class="col-md-2">
+                <h4>Click %</h4>
+                <p><%= number_to_percentage(number_with_precision(email.click_percentage), precision: 2) %></p>
+            </div>
+            <div class="col-md-2">
+                <h4>Open to Click %</h4>
+                <p><%= number_to_percentage(number_with_precision(email.open_to_click_percentage), precision: 2) %></p>
+            </div><div class="col-md-2">
+                <h4>Conversion %</h4>
+                <p><%= number_to_percentage(number_with_precision(email.conversion_percentage), precision: 2) %></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <%= button_to 'Edit', edit_experiment_email_path(@experiment, email), :method => "get", class: "btn btn-primary" %>
+                    <%= button_to 'Destroy', [@experiment, email], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<% end %>
+</table>
+<div class="row">
+    <div class="well col-md-12">
+        <div class="text-center"><%= button_to 'New Email', new_experiment_email_path(@experiment), :method => "get", class: "btn btn-success" %></div>
+    </div>
+</div>

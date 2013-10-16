@@ -46,7 +46,7 @@ class PpcAdCopiesController < ApplicationController
 
     respond_to do |format|
       if @ppc_ad_copy.save
-        format.html { redirect_to @experiment, notice: 'Ppc ad copy was successfully created.' }
+        format.html { redirect_to @experiment, notice: 'PPC Ad Copy was Successfully Created.' }
         format.json { render json: @ppc_ad_copy, status: :created, location: @ppc_ad_copy }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class PpcAdCopiesController < ApplicationController
 
     respond_to do |format|
       if @ppc_ad_copy.update_attributes(params[:ppc_ad_copy])
-        format.html { redirect_to @experiment, notice: 'Ppc ad copy was successfully updated.' }
+        format.html { redirect_to @experiment, notice: 'PPC Ad Copy was Successfully Updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
